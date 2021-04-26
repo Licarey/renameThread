@@ -1,4 +1,4 @@
-//include ':instrutment'//include ':androidcore'
+//include ':instrument'//include ':instrutment'//include ':androidcore'
 include ':app'
 rootProject.name='Leak'
 include ':rename'

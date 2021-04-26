@@ -1,0 +1,4 @@
+//include ':instrutment'//include ':androidcore'
+include ':app'
+rootProject.name='Leak'
+include ':rename'

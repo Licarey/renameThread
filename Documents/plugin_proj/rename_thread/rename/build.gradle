@@ -1,0 +1,43 @@
+apply from: "$rootDir/gradle/booster.gradle"
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply from: "upload.gradle"
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation gradleApi()
+    implementation localGroovy()
+    kapt 'com.google.auto.service:auto-service:1.0-rc6'
+
+    api 'org.apache.commons:commons-compress:1.19'
+
+    implementation 'org.ow2.asm:asm:7.1'
+    implementation 'org.ow2.asm:asm-analysis:7.1'
+    implementation 'org.ow2.asm:asm-commons:7.1'
+    implementation 'org.ow2.asm:asm-tree:7.1'
+    implementation 'org.ow2.asm:asm-util:7.1'
+    api 'com.google.auto.service:auto-service:1.0-rc6'
+    compileOnly 'com.android.tools.build:gradle:4.1.0'
+
+    implementation files('libs/androidcore.jar')
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.groupId = 'com.carey.plugin'
+            pom.artifactId = 'rename'
+            pom.version = '0.0.6'
+            repository(url: uri('../repo'))
+        }
+    }
+}
+

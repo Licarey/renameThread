@@ -1,0 +1,20 @@
+apply plugin: 'maven'
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      repository(url: "http://nexus.rightpaddle.cn/repository/rightpaddle-mobile/") {
+        authentication(userName: "liming", password: "Carey52005200") //LDAP账号
+      }
+      //上传aar时，必须更改version
+      pom.project {
+        name 'caton'
+        version '1.0.0'
+        artifactId 'caton'
+        groupId 'com.uhuh.android.plugin'
+        packaging 'aar'
+        description 'caton for application.'
+      }
+    }
+  }
+}

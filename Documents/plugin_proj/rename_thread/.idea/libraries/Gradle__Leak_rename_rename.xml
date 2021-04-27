@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: Leak.rename.rename">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/rename/build/libs/rename.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

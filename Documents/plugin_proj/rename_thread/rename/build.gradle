@@ -24,7 +24,6 @@ dependencies {
     compileOnly 'com.android.tools.build:gradle:4.1.0'
 
     implementation files('libs/androidcore.jar')
-    implementation files('libs/instrument.jar')
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -36,7 +35,7 @@ uploadArchives {
         mavenDeployer {
             pom.groupId = 'com.carey.plugin'
             pom.artifactId = 'rename'
-            pom.version = '0.0.7'
+            pom.version = '0.0.8'
             repository(url: uri('../repo'))
         }
     }
